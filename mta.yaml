@@ -1,0 +1,17 @@
+ID: openSAPHANA6
+_schema-version: '2.0'
+description: openSAP HANA6 Group 00
+version: 0.0.1
+
+modules:
+- name: web
+  type: html5
+  path: web
+  requires:
+      - name: openSAPHANA6_00-uaa
+      
+resources:
+  - name: openSAPHANA6_00-uaa
+    type: com.sap.xs.uaa-space
+    parameters:
+      config_path: ./xs-security.json 
