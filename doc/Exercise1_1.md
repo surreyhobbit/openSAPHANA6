@@ -7,7 +7,7 @@ The code is incorrect because it doesnt take the right instance number into acco
 3. Then use the  right command line:
 
 `
-xs login -a https://ec2-34-231-45-95.compute-1.amazonaws.com:39030 -o HANAExpress -s development -u XSA_DEV -p 2ndKn\!ght --skip-ssl-validation
+xs login -a https://ec2-34-231-45-95.compute-1.amazonaws.com:39030 -o HANAExpress -s development -u XSA_DEV -p Passw\!rd --skip-ssl-validation
 `
 
 Then create the service instance like this:

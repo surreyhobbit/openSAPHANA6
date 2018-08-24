@@ -20,3 +20,14 @@ the technical container pplication user:
 
 `default_access_role.hbrole`
 
+It is *important* that this role is created in the `src/default` folder
+
+# Cross container access
+
+Launch the SAP HANA XS Advanced Cockpit:
+
+[link](https://ec2-34-231-45-95.compute-1.amazonaws.com:51041)
+
+If port is unknown, logon with `xs-admin-login` and list all apps with `xs apps`
+then find the cockpit web app in the list
+
