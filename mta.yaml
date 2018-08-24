@@ -2,16 +2,28 @@ ID: openSAPHANA6
 _schema-version: '2.0'
 description: openSAP HANA6 Group 00
 version: 0.0.1
-
 modules:
-- name: web
-  type: html5
-  path: web
-  requires:
+  - name: web
+    type: html5
+    path: web
+    requires:
       - name: openSAPHANA6_00-uaa
-      
+  - name: core_db
+    type: hdb
+    path: core_db
+    requires:
+      - name: hdi-container
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
 resources:
   - name: openSAPHANA6_00-uaa
     type: com.sap.xs.uaa-space
     parameters:
-      config_path: ./xs-security.json 
+      config_path: ./xs-security.json
+  - name: hdi-container
+    parameters:
+      config:
+        schema: OPENSAP_HANA6_00
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
