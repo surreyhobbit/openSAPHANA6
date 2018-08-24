@@ -35,7 +35,9 @@ then find the cockpit web app in the list
 (p47)
 If XSA Cockpit not working then use CLI:
 
-`xs cups CROSS_SCHEMA_SFLIGHT_00 -p "{\"host\":\"ec2-34-231-45-95.compute-1.amazonaws.com\",\"port\":\"39013\",\"user\":\"SYSTEM\",\"password\":\"Bj0ner0a\",\"driver\":\"com.sap.db.jdbc.Driver\",\"tags\":[\"hana\"] , \"schema\" : \"SFLIGHT\" }"`
+```
+xs cups CROSS_SCHEMA_SFLIGHT_00 -p "{\"host\":\"ec2-34-231-45-95.compute-1.amazonaws.com\",\"port\":\"39013\",\"user\":\"SYSTEM\",\"password\":\"<passw0rd>\",\"driver\":\"com.sap.db.jdbc.Driver\",\"tags\":[\"hana\"] , \"schema\" : \"SFLIGHT\" }"
+```
 
 which gives response
 
