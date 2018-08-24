@@ -31,3 +31,27 @@ Launch the SAP HANA XS Advanced Cockpit:
 If port is unknown, logon with `xs-admin-login` and list all apps with `xs apps`
 then find the cockpit web app in the list
 
+# User Provided Service using command line
+(p47)
+If XSA Cockpit not working then use CLI:
+
+`xs cups CROSS_SCHEMA_SFLIGHT_00 -p "{\"host\":\"ec2-34-231-45-95.compute-1.amazonaws.com\",\"port\":\"39013\",\"user\":\"SYSTEM\",\"password\":\"Bj0ner0a\",\"driver\":\"com.sap.db.jdbc.Driver\",\"tags\":[\"hana\"] , \"schema\" : \"SFLIGHT\" }"`
+
+which gives response
+
+see also this link [link](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/xsa-create-user-provided-anonymous-service/xsa-create-user-provided-anonymous-service.md)
+
+```json
+{
+  "name" : "CROSS_SCHEMA_SFLIGHT_00",
+  "credentials" : {
+    "schema" : "SFLIGHT",
+    "password" : "Bj0ner0a",
+    "driver" : "com.sap.db.jdbc.Driver",
+    "port" : "39013",
+    "host" : "ec2-34-231-45-95.compute-1.amazonaws.com",
+    "user" : "SYSTEM",
+    "tags" : [ "hana" ]
+  }
+}
+```
