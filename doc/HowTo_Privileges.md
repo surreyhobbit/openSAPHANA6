@@ -48,7 +48,7 @@ see also this link [link](https://github.com/SAPDocuments/Tutorials/blob/master/
   "name" : "CROSS_SCHEMA_SFLIGHT_00",
   "credentials" : {
     "schema" : "SFLIGHT",
-    "password" : "Bj0ner0a",
+    "password" : "PasswrdBl00na",
     "driver" : "com.sap.db.jdbc.Driver",
     "port" : "39013",
     "host" : "ec2-34-231-45-95.compute-1.amazonaws.com",
