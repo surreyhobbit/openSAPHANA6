@@ -57,7 +57,7 @@ see also this link [link](https://github.com/SAPDocuments/Tutorials/blob/master/
   }
 }
 ```
-
+### Error handling
 
 When having problems with the user provided service, try to update the port to 3<instance>15 for MDC and also try a different host (check the XSADMIN console what other service are using for the host).
   
@@ -66,3 +66,8 @@ When having problems with the user provided service, try to update the port to 3
   `xs uups -p "host, port"`
   
   see also (https://docs.cloudfoundry.org/devguide/services/user-provided.html)
+  
+  ALso change the user for the service to the XSA_DEV user instead of the system user:
+  https://answers.sap.com/questions/274657/sap-web-ide-for-sap-hana-build-error-more-than-one.html
+  
+  
