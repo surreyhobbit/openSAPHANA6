@@ -57,3 +57,12 @@ see also this link [link](https://github.com/SAPDocuments/Tutorials/blob/master/
   }
 }
 ```
+
+
+When having problems with the user provided service, try to update the port to 3<instance>15 for MDC and also try a different host (check the XSADMIN console what other service are using for the host).
+  
+  You can use the following command line for updating the ups in interactive mode with parameters :
+  
+  `xs uups -p "host, port"`
+  
+  see also (https://docs.cloudfoundry.org/devguide/services/user-provided.html)
