@@ -70,4 +70,28 @@ When having problems with the user provided service, try to update the port to 3
   ALso change the user for the service to the XSA_DEV user instead of the system user:
   https://answers.sap.com/questions/274657/sap-web-ide-for-sap-hana-build-error-more-than-one.html
   
-  
+
+### Issue resolution
+Problem was that services were created in the wrong space (SAP instead of development).
+To fix this, log off from xs admin in CLI, and re-log-on like this:
+`xs login -s development`
+That logs you in in the new space
+There, check `xs service` and you'll see that the service isn't there.
+
+The create the service there as above or with the interactive mode (using cloud foundry command cuups):
+
+```
+xs cups CROSS_SCHEMA_SFLIGHT_00 -p "host, port, user, password, driver, tags, schema"
+```
+
+and use the inputs as per above.
+
+```
+    "schema" : "SFLIGHT",
+    "password" : "PasswrdBl00na",
+    "driver" : "com.sap.db.jdbc.Driver",
+    "port" : "39013",
+    "host" : "ec2-34-231-45-95.compute-1.amazonaws.com",
+    "user" : "SYSTEM",
+    "tags" : [ "hana" ]
+```
