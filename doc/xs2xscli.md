@@ -1,10 +1,14 @@
 ### GETTING STARTED:                                
+```
    login, l                                        Log user in
    logout                                          Log user out
    target, t                                       Set or view the targeted org or space
    api                                             Set or view target api url
+```
 
  ### APPS:                                           
+
+```
    apps, a                                         List all apps in the target space
    app                                             Display the status and information about an app
                                                    
@@ -27,8 +31,10 @@
    env, e                                          Show all env variables for an app
    set-env, se                                     Set an env variable for an app
    unset-env                                       Remove a variable from the environment of an app
+```
 
-###  SERVICES:                                       
+###  SERVICES: 
+```
    marketplace, m                                  List available offerings in the marketplace
    services, s                                     List all services in the target space
    create-service, cs                              Create a service instance
@@ -44,42 +50,54 @@
    update-user-provided-service, uups              Update user-provided service instance name value pairs
    register-service-url                            Register a service name with a URL
    unregister-service-url                          Unregister a service URL
+```
 
-###  ORGS:                                           
+###  ORGS: 
+```
    orgs, o                                         List all orgs
    create-org, co                                  Create an org
    delete-org                                      Delete an org
    rename-org                                      Rename an org
+   ```
 
-###  SPACES:                                         
+###  SPACES:  
+```
    spaces                                          List all spaces in an org
    create-space                                    Create a space
    delete-space                                    Delete a space
    rename-space                                    Rename a space
    update-space                                    Update settings of an existing space
+   ```
 
-###  DOMAINS:                                        
+###  DOMAINS:     
+```
    domains                                         List all domains
    create-domain                                   Create a domain
    delete-domain                                   Delete a domain
    set-certificate                                 Sets the SSL certificate used for a domain.
    delete-certificate                              Deletes the SSL certificate used for a domain.
+   ```
 
-###  ROUTES:                                         
+###  ROUTES:    
+```
    routes, r                                       List all routes in current space
    create-route                                    Create a url route in a space for later use
    map-route                                       Assign or change the route for an app
    unmap-route                                     Remove a url route from an app
    delete-route                                    Delete a route
+   ```
 
-###  BUILDPACKS:                                     
+###  BUILDPACKS:  
+```
    buildpacks                                      List all buildpacks
    create-buildpack                                Create a new buildpack
    update-buildpack                                Update a buildpack
    rename-buildpack                                Rename a buildpack
    delete-buildpack                                Delete a buildpack
+   ```
 
-###  RUNTIMES:                                       
+###  RUNTIMES:    
+```
    runtimes                                        List all runtimes
    runtime                                         Display information about a runtime component
    create-runtime                                  Create a new runtime component
@@ -89,8 +107,10 @@
    pinned-runtimes                                 List all pinned runtime components for an application
    pin-runtime                                     Pin a runtime component to an application
    unpin-runtime                                   Unpin a runtime component from an application
+   ```
 
- ### USER ADMIN:                                     
+ ### USER ADMIN:   
+ ```
    users                                           List all users
    purge-users                                     Removes all users from Controller which are not known to UAA [-f]
                                                    
@@ -101,32 +121,42 @@
    org-users                                       Show org users by role
    set-org-role                                    Assign a org role to a user
    unset-org-role                                  Revoke a org role from a user
+   ```
 
-###  ADMIN:                                          
+###  ADMIN:       
+```
    traces                                          List all available tracing components
    enable-trace                                    Enable tracing components
    disable-trace                                   Disable tracing components
+   ```
 
-###  CONFIG:                                         
+###  CONFIG:     
+```
    running-environment-variable-group, revg        Retrieve the contents of the running environment variable group
    set-running-environment-variable-group, srevg   Pass parameters as JSON to create a running environment variable group
    staging-environment-variable-group, sevg        Retrieve the contents of the staging environment variable group
    set-staging-environment-variable-group, ssevg   Pass parameters as JSON to create a staging environment variable group
+   ```
 
- ### BLOB STORE:                                     
+ ### BLOB STORE:    
+ ```
    blob-store-info                                 Show information about the blob store.
    blob-set-list                                   Lists all blob sets in the blob store.
    blob-list                                       Lists all blobs in the blob set.
    blob-set-download                               Downloads the content of a blob set as a zip file.
    blob-store-gc                                   Triggers a garbage collection of the blob store.
+   ```
 
- ### OTHERS:                                         
+ ### OTHERS:      
+ ```
    version                                         Show server version information.
    help, h                                         Show help
    system-info                                     Show information about the system infrastructure.
    oauth-token                                     Retrieve and display the OAuth token for the current session
+   ```
 
-  ### PLUGINS:                                        
+  ### PLUGINS:      
+  ```
    deploy                                          Deploy a new multi-target app or sync changes to an existing one
    undeploy                                        Undeploy a multi-target app
    mta-ops                                         List all active multi-target app operations
@@ -141,3 +171,4 @@
    install, ins                                    Install software component version
    list-components, lc                             List all installed software component versions
    display-installation-logs, dil                  Display Product Installer log
+   ```
