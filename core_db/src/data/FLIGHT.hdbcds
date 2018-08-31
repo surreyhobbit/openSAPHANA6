@@ -12,7 +12,7 @@ context FLIGHT {
             and SBOOKLink.CONNID = FLIGHTTBL.CONNID 
             and SBOOKLink.FLDATE = FLIGHTTBL.FLDATE; 
       }
-      into
+      into 
       {
          MANDT     as "Client",
          CARRID    as "CarrierId",
