@@ -1,5 +1,5 @@
 {
-  "SFLIGHT": {
+  "SFLIGHT": { 
     "target": {
       "object": "SFLIGHT",
       "schema": "SFLIGHT"

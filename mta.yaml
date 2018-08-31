@@ -38,3 +38,4 @@ resources:
         service-name: 'CROSS_SCHEMA_SFLIGHT_00'
     properties:
         sflight-service-name: '${service-name}'
+ 

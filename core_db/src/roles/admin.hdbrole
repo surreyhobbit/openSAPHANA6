@@ -16,7 +16,7 @@
 		"schema_analytic_privileges": [
             {
                 "privileges":[ "PO_VIEW_PRIVILEGE", "FLIGHT VIEW PRVILEGE" ]
-            }
+            } 
         ]
 	}
 }

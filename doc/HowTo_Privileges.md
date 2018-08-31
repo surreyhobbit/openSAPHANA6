@@ -147,5 +147,5 @@ Then synonyms need to be created in this way:
       "schema": "SFLIGHT"
     }
   }
-}
+} 
 ```
