@@ -95,3 +95,57 @@ and use the inputs as per above.
     "user" : "SYSTEM",
     "tags" : [ "hana" ]
 ```
+
+
+### Granting access to the container users
+Create a file in the *cfg* folder, e.g. `SFLIGHT.hdbgrants`
+
+enter something like:
+
+```json
+{
+"hdi-sflight-service": {
+"object_owner" : { "schema_privileges":[
+{
+"privileges_with_grant_option":["SELECT", "SELECT METADATA"]
+} ]
+},
+"application_user" : {
+"schema_privileges":[ {
+"reference":"SFLIGHT",
+"privileges_with_grant_option":["SELECT", "SELECT METADATA"]
+} ]
+} }
+}
+```
+
+This is assigning access to the SFLIGHT schema to both the container technical users – owner and application user. 
+The grant is performed by the user provided service and the database user you configured in that user provided service.
+(so in the service the user needs to be a DB user).
+
+(https://github.com/SAP/com.sa p.openSAP .hana5.templates/bl ob/hana2_sps02/ex2/ex2_12)
+
+Then synonyms need to be created in this way:
+
+```json
+{
+  "SFLIGHT": {
+    "target": {
+      "object": "SFLIGHT",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SBOOK": {
+    "target": {
+      "object": "SBOOK",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SPFLI": {
+    "target": {
+      "object": "SPFLI",
+      "schema": "SFLIGHT"
+    }
+  }
+}
+```
