@@ -1,4 +1,4 @@
-using SFLIGHT as FLIGHTTBL; 
+using SFLIGHT as FLIGHTTBL;  
 using SBOOK as BOOKINGS;
 
 context FLIGHT {
