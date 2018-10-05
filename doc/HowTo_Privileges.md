@@ -57,3 +57,95 @@ see also this link [link](https://github.com/SAPDocuments/Tutorials/blob/master/
   }
 }
 ```
+### Error handling
+
+When having problems with the user provided service, try to update the port to 3<instance>15 for MDC and also try a different host (check the XSADMIN console what other service are using for the host).
+  
+  You can use the following command line for updating the ups in interactive mode with parameters :
+  
+  `xs uups -p "host, port"`
+  
+  see also (https://docs.cloudfoundry.org/devguide/services/user-provided.html)
+  
+  ALso change the user for the service to the XSA_DEV user instead of the system user:
+  https://answers.sap.com/questions/274657/sap-web-ide-for-sap-hana-build-error-more-than-one.html
+  
+
+### Issue resolution
+Problem was that services were created in the wrong space (SAP instead of development).
+To fix this, log off from xs admin in CLI, and re-log-on like this:
+`xs login -s development`
+That logs you in in the new space
+There, check `xs service` and you'll see that the service isn't there.
+
+The create the service there as above or with the interactive mode (using cloud foundry command cuups):
+
+```
+xs cups CROSS_SCHEMA_SFLIGHT_00 -p "host, port, user, password, driver, tags, schema"
+```
+
+and use the inputs as per above.
+
+```
+    "schema" : "SFLIGHT",
+    "password" : "PasswrdBl00na",
+    "driver" : "com.sap.db.jdbc.Driver",
+    "port" : "39013",
+    "host" : "ec2-34-231-45-95.compute-1.amazonaws.com",
+    "user" : "SYSTEM",
+    "tags" : [ "hana" ]
+```
+
+
+### Granting access to the container users
+Create a file in the *cfg* folder, e.g. `SFLIGHT.hdbgrants`
+
+enter something like:
+
+```json
+{
+"hdi-sflight-service": {
+"object_owner" : { "schema_privileges":[
+{
+"privileges_with_grant_option":["SELECT", "SELECT METADATA"]
+} ]
+},
+"application_user" : {
+"schema_privileges":[ {
+"reference":"SFLIGHT",
+"privileges_with_grant_option":["SELECT", "SELECT METADATA"]
+} ]
+} }
+}
+```
+
+This is assigning access to the SFLIGHT schema to both the container technical users – owner and application user. 
+The grant is performed by the user provided service and the database user you configured in that user provided service.
+(so in the service the user needs to be a DB user).
+
+(https://github.com/SAP/com.sa p.openSAP .hana5.templates/bl ob/hana2_sps02/ex2/ex2_12)
+
+Then synonyms need to be created in this way:
+
+```json
+{
+  "SFLIGHT": {
+    "target": {
+      "object": "SFLIGHT",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SBOOK": {
+    "target": {
+      "object": "SBOOK",
+      "schema": "SFLIGHT"
+    }
+  },
+  "SPFLI": {
+    "target": {
+      "object": "SPFLI",
+      "schema": "SFLIGHT"
+    }
+  }
+} 
+```

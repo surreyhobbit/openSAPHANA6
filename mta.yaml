@@ -19,7 +19,21 @@ modules:
         group: SERVICE_REPLACEMENTS
         properties:
             key: hdi-sflight-service
-            service: ~{sflight-service-name} 
+            service: '~{sflight-service-name}'
+      - name: user-container
+        group: SERVICE_REPLACEMENTS
+        properties:
+            key: hdi-user-service
+            service: '~{user-container-name}'
+
+  - name: user_db
+    type: hdb
+    path: user_db
+    requires:
+     - name: user-container
+       properties:
+          TARGET_CONTAINER: '~{user-container-name}'
+
 resources:
   - name: openSAPHANA6_00-uaa
     type: com.sap.xs.uaa-space
@@ -35,6 +49,15 @@ resources:
   - name: CrossSchemaService
     type: org.cloudfoundry.existing-service
     parameters:
-        service-name: CROSS_SCHEMA_SFLIGHT_00
+        service-name: 'CROSS_SCHEMA_SFLIGHT_00'
     properties:
         sflight-service-name: '${service-name}'
+ 
+  - name: user-container
+    parameters:
+       config:
+          schema: OPENSAP_HANA_USER_00
+    properties:
+       user-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+
