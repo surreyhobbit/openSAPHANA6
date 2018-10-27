@@ -7,24 +7,24 @@ Check out community link with Thomas Jung response
 
 Don't use `wget` or `curl` to download the file, use `git clone` instead. (I didn't fork it before, but cloned directly).
 
-`
+```
 git clone https://github.com/SAP/com.sap.openSAP.hana5.templates.git
-`
+```
 Then change the branch:
-`
+```
 git checkout hana2_sps02
-`
+```
 Then make sure you are in the correct deplyment target, i.e. correct space:
-`
+```
 xs login -s development
-`
+```
 Then deploy the MTA:
-`
+```
 xs deploy openSAP.CentralDB_1.0.2017.mtar --use-namespaces
-`
+```
 
 Then the process finishes, creates the required service:
-`
+```
 Uploading 1 files:
  /hana/shared/HXE/HDB90/com.sap.openSAP.hana5.templates/ex2/openSAP.CentralDB_1.0.2017.mtar
 File upload finished
@@ -83,7 +83,7 @@ Starting monitoring...
  Creating service brokers...
  Updating subscribers...
 Process finished
-`
+```
 
 Then the core_db can be build again and this time it works.
 
