@@ -1,3 +1,6 @@
+# page 77
+install same data model as SHINE (SAP hana interactive education)
+
 # page 74
 
 31.08.2017: page 59 exercise 2.6 next
