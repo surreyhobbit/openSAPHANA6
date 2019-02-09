@@ -1,3 +1,7 @@
+# page 92
+exercise 2.9 is next
+finished 2.8 calculation views successfully (Feb 2019)
+
 # page 77
 install same data model as SHINE (SAP hana interactive education)
 

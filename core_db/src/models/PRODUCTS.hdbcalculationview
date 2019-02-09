@@ -196,6 +196,8 @@
       <viewAttribute id="ProductName">
         <descriptions defaultDescription="Text"/>
       </viewAttribute>
+    
+      <viewAttribute hidden="true" id="JOIN$NAMEID$TEXTID"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <restrictedViewAttributes/>
@@ -214,12 +216,14 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="BUILDING" source="BUILDING"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$NAMEID$TEXTID" source="NAMEID"/>
     </input>
     <input node="Util.Texts">
       <mapping xsi:type="Calculation:AttributeMapping" target="ProductName" source="TEXT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DESCID" source="TEXTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$NAMEID$TEXTID" source="TEXTID"/>
     </input>
-    <joinAttribute name="DESCID"/>
+    <joinAttribute name="JOIN$NAMEID$TEXTID"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="Product_Desc" cardinality="CN_N" joinType="textTable" languageColumn="LANGUAGE">
     <viewAttributes>
