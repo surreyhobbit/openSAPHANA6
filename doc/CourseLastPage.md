@@ -1,3 +1,8 @@
+# page 99
+exercise 99 calculation view CUBE / star join
+finished but no data is shown
+could try and fix or move on to next page SQLScript
+
 # page 92
 exercise 2.9 is next
 finished 2.8 calculation views successfully (Feb 2019)

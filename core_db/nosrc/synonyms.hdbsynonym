@@ -1,0 +1,26 @@
+{
+  "core.models::PO.Header": {
+    "target": {
+      "object": "PO.Header",
+      "schema": "OPENSAP_HANA6_00_3"
+    }
+  },
+  "core.models::PO.Item": {
+    "target": {
+      "object": "PO.Item",
+      "schema": "OPENSAP_HANA6_00_3"
+    }
+  },
+  "core.models::PRODUCTS": {
+    "target": {
+      "object": "core.models::PRODUCTS",
+      "schema": "OPENSAP_HANA6_00_3"
+    }
+  },
+  "core.models::PURCHASE_ORDERS": {
+    "target": {
+      "object": "core.models::PURCHASE_ORDERS",
+      "schema": "OPENSAP_HANA6_00_3"
+    }
+  }
+}

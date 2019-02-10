@@ -1,0 +1,68 @@
+{
+  "undefined": {
+    "object_owner": {
+      "object_privileges": [
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "PO.Header",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        },
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "PO.Item",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        },
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "core.models::PRODUCTS",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        },
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "core.models::PURCHASE_ORDERS",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        }
+      ]
+    },
+    "application_user": {
+      "object_privileges": [
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "PO.Header",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        },
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "PO.Item",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        },
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "core.models::PRODUCTS",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        },
+        {
+          "schema": "OPENSAP_HANA6_00_3",
+          "name": "core.models::PURCHASE_ORDERS",
+          "privileges_with_grant_option": [
+            "SELECT"
+          ]
+        }
+      ]
+    }
+  }
+}
